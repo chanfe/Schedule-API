@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   delete '/schedules/:id', to: 'schedules#destroy'
 
   post '/schedules/:id/appointments', to: 'appointments#create'
-  delete '/schedules/:id/appointments', to: 'appointments#destroy'
+  delete '/schedules/:id/appointments/:id', to: 'appointments#destroy'
 
 end

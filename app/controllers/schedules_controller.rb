@@ -6,9 +6,10 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Appointment.where(:id == :schedule_id)
+    @schedule = Schedule.find(params[:id])
+    @arr = Appointment.select { |e| e.schedule_id == @schedule.id}
 
-    render json: @schedule
+    render json: @arr
   end
 
   def create
